@@ -7,7 +7,6 @@ public class MultiplicationQuiz {
 
         int score;
 
-
         do {
             score = 0;
 
@@ -22,21 +21,13 @@ public class MultiplicationQuiz {
                 if (question == answer) {
                     System.out.println("Correct");
                     score++;
-
                 } else {
                     System.out.println("Incorrect");
                 }
             }
 
-
-
-            } else {
-                System.out.println("New set of problems!");
-            }
-
-
+            System.out.println("New set of problems!");
 
         } while (score < 10);
     }
 }
-

@@ -1,37 +1,37 @@
 import java.util.Scanner;
 
 public class DuplicateRemover {
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
-        System.out.print("Please enter the size of the array: ");
-        int arrayLength = scanner.nextInt();
-        int[] inputNumbers = new int[arrayLength];
+        System.out.print("Please input total elements: ");
+        int total = scan.nextInt();
+        int[] rawData = new int[total];
 
-        System.out.println("Please enter the integers in the array: :");
-        for (int numIndex = 0; numIndex < arrayLength; numIndex++) {
-            inputNumbers[numIndex] = scanner.nextInt();
+        System.out.println("Input numbers sequentially: ");
+        for (int a = 0; a < total; a++) {
+            rawData[a] = scan.nextInt();
         }
 
-        int[] uniqueNumbers = new int[arrayLength];
-        int uniqueCount = 0;
+        int[] filtered = new int[total];
+        int count = 0;
 
-        for (int outerIndex = 0; outerIndex < arrayLength; outerIndex++) {
-            boolean isDuplicate = false;
-            for (int innerIndex = 0; innerIndex < uniqueCount; innerIndex++) {
-                if (inputNumbers[outerIndex] == uniqueNumbers[innerIndex]) {
-                    isDuplicate = true;
+        for (int x = 0; x < total; x++) {
+            boolean exists = false;
+            for (int y = 0; y < count; y++) {
+                if (rawData[x] == filtered[y]) {
+                    exists = true;
                     break;
                 }
             }
-            if (!isDuplicate) {
-                uniqueNumbers[uniqueCount++] = inputNumbers[outerIndex];
+            if (!exists) {
+                filtered[count++] = rawData[x];
             }
         }
 
-        System.out.print("The unique numbers in your array are: ");
-        for (int displayIndex = 0; displayIndex < uniqueCount; displayIndex++) {
-            System.out.print(uniqueNumbers[displayIndex] + " ");
+        System.out.println("Filtered numbers without repetition: ");
+        for (int z = 0; z < count; z++) {
+            System.out.print(filtered[z] + " ");
         }
     }
 }

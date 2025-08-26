@@ -5,22 +5,22 @@ public class MultiplicationQuiz {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int score;
+        int totalScore;
 
         do {
-            score = 0;
+            totalScore = 0;
 
-            for (int i = 1; i <= 10; i++) {
-                int num1 = (int)(Math.random() * 10) + 1;
-                int num2 = (int)(Math.random() * 10) + 1;
-                int answer = num1 * num2;
+            for (int questionNumber = 1; questionNumber <= 10; questionNumber++) {
+                int factor1 = (int)(Math.random() * 10) + 1;
+                int factor2 = (int)(Math.random() * 10) + 1;
+                int correctAnswer = factor1 * factor2;
 
-                System.out.print("Question " + i + ": What is " + num1 + " * " + num2 + "? ");
-                int question = scanner.nextInt();
+                System.out.print("Question " + questionNumber + ": What is " + factor1 + " * " + factor2 + "? ");
+                int userAnswer = scanner.nextInt();
 
-                if (question == answer) {
+                if (userAnswer == correctAnswer) {
                     System.out.println("Correct");
-                    score++;
+                    totalScore++;
                 } else {
                     System.out.println("Incorrect");
                 }
@@ -28,6 +28,6 @@ public class MultiplicationQuiz {
 
             System.out.println("Let's try another set of questions!");
 
-        } while (score < 10);
+        } while (totalScore < 10);
     }
 }

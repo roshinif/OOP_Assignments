@@ -1,32 +1,33 @@
 import java.util.Scanner;
 
 public class PrimeNumberChecker {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Type the starting number: ");
-        int start = scanner.nextInt();
+        System.out.println("Enter the start number:");
+        int startNumber = Integer.parseInt(scanner.nextLine());
 
-        System.out.print("Type the ending number: ");
-        int end = scanner.nextInt();
+        System.out.println("Enter the end number:");
+        int endNumber = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Prime numbers between " + start + " and " + end + ":");
+        System.out.println("Prime numbers between " + startNumber + " and " + endNumber + ":");
 
-        for (int num = start; num <= end; num++) {
-            if (num > 1) {
-                boolean primeCheck = true;
-                for (int i = 2; i <= num / 2; i++) {
-                    if (num % i == 0) {
-                        primeCheck = false;
+        for (int currentNumber = startNumber; currentNumber <= endNumber; currentNumber++) {
+            if (currentNumber > 1) {
+                boolean isPrime = true;
+
+                for (int divisor = 2; divisor <= currentNumber / 2; divisor++) {
+                    if (currentNumber % divisor == 0) {
+                        isPrime = false;
                         break;
                     }
                 }
-                if (primeCheck) {
-                    System.out.print(num + " ");
+
+                if (isPrime) {
+                    System.out.print(currentNumber + " ");
                 }
             }
         }
     }
 }
-
-

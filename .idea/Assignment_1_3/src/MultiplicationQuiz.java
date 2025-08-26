@@ -26,7 +26,7 @@ public class MultiplicationQuiz {
                 }
             }
 
-            System.out.println("New set of problems!");
+            System.out.println("Let's try another set of questions!");
 
         } while (score < 10);
     }

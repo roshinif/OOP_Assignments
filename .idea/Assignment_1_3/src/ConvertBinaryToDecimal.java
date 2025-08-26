@@ -5,21 +5,19 @@ public class ConvertBinaryToDecimal {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Type a binary number: ");
-        String binary = scanner.nextLine();
+        String binaryInput = scanner.nextLine();
 
-        int decimal = 0;
-        int no_bits = binary.length();
+        int decimalValue = 0;
+        int lengthOfBinary = binaryInput.length();
 
-        for(int i=0; i<no_bits; i++){
-            char bit = binary.charAt(i);
+        for(int index = 0; index < lengthOfBinary; index++){
+            char currentBit = binaryInput.charAt(index);
 
-            int digit = bit - '0';
+            int bitValue = currentBit - '0';
 
-            decimal = decimal * 2 + digit;
-
+            decimalValue = decimalValue * 2 + bitValue;
         }
 
-        System.out.println("Decimal value: " + decimal);
+        System.out.println("Decimal value: " + decimalValue);
     }
 }
-

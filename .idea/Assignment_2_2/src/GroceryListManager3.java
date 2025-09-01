@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class GroceryListManager3 {
 
-    // Inner class to represent an item with cost and category
     private static class Item {
         double cost;
         String category;

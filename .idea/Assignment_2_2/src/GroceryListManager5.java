@@ -3,7 +3,6 @@ import java.util.Map;
 
 public class GroceryListManager5 {
 
-    // Inner class to represent an item with cost, category, and quantity
     private static class Item {
         double cost;
         String category;
@@ -18,7 +17,6 @@ public class GroceryListManager5 {
 
     private HashMap<String, Item> groceryList = new HashMap<>();
 
-    // Add an item with cost, category, and quantity
     public void addItem(String item, double cost, String category, int quantity) {
         if (groceryList.containsKey(item)) {
             System.out.println(item + " is already in the grocery list.");
@@ -28,7 +26,6 @@ public class GroceryListManager5 {
         }
     }
 
-    // Update quantity of an existing item
     public void updateQuantity(String item, int newQuantity) {
         if (groceryList.containsKey(item)) {
             groceryList.get(item).quantity = newQuantity;

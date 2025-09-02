@@ -1,8 +1,8 @@
 public class Car {
-    private double speed;
-    private double fuel;
-    private String model;
-    private double tankCapacity;
+    protected double speed;
+    protected double fuel;
+    protected String model;
+    protected double tankCapacity;
 
     public Car(String model) {
         this.model = model;
